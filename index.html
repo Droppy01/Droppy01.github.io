@@ -23,15 +23,19 @@
 
 </body>
 <script>
-    
+    //run a scrift for all of the li element
  for ( let i=0; i < document.querySelectorAll("li").length; i++) {
     
+    //add an eventlisener to  the buttons
     document.querySelectorAll("li>div")[i].addEventListener("click",(self, number) => { 
+
+        //change class of element to change the style
         document.querySelectorAll("li>div").forEach((ellement)=> {
             ellement.className = "";
         })
         document.querySelectorAll("li>div")[i].className = "presed";
         
+        //put the selected item in the "you have seleced ..."
         document.getElementById("selected").innerHTML = document.querySelectorAll("li>p")[i].innerHTML
     })
  }
