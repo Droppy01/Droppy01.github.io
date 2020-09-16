@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id=display>
+        <h1> my restorand </h1>
+
+        <li> <p>hamburger</p> <div>buy</div> </li>
+        <li> <p>kipburger</p> <div>buy</div> </li>
+        <li> <p>patat</p> <div>buy</div> </li>
+        <li> <p>cola</p> <div>buy</div> </li>
+        <li> <p>fanta</p> <div>buy</div> </li>
+        <li> <p>frikandel</p> <div>buy</div> </li>
+
+        <p>you heve selected <span id="selected">...</span></p>
+    
+    </section>
+
+</body>
+<script>
+    
+ for ( let i=0; i < document.querySelectorAll("li").length; i++) {
+    
+    document.querySelectorAll("li>div")[i].addEventListener("click",(self, number) => { 
+        document.querySelectorAll("li>div").forEach((ellement)=> {
+            ellement.className = "";
+        })
+        document.querySelectorAll("li>div")[i].className = "presed";
+        
+        document.getElementById("selected").innerHTML = document.querySelectorAll("li>p")[i].innerHTML
+    })
+ }
+</script>
+</html>
