@@ -4,40 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section id=display>
-        <h1> my restorand </h1>
-
-        <li> <p>hamburger</p> <div>buy</div> </li>
-        <li> <p>kipburger</p> <div>buy</div> </li>
-        <li> <p>patat</p> <div>buy</div> </li>
-        <li> <p>cola</p> <div>buy</div> </li>
-        <li> <p>fanta</p> <div>buy</div> </li>
-        <li> <p>frikandel</p> <div>buy</div> </li>
-
-        <p>you heve selected <span id="selected">...</span></p>
     
-    </section>
-
 </body>
-<script>
-    //run a scrift for all of the li element
- for ( let i=0; i < document.querySelectorAll("li").length; i++) {
-    
-    //add an eventlisener to  the buttons
-    document.querySelectorAll("li>div")[i].addEventListener("click",(self, number) => { 
-
-        //change class of element to change the style
-        document.querySelectorAll("li>div").forEach((ellement)=> {
-            ellement.className = "";
-        })
-        document.querySelectorAll("li>div")[i].className = "presed";
-        
-        //put the selected item in the "you have seleced ..."
-        document.getElementById("selected").innerHTML = document.querySelectorAll("li>p")[i].innerHTML
-    })
- }
-</script>
 </html>
