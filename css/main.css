@@ -1,0 +1,74 @@
+:root {
+    --primary-background: #fdfdfd;
+    --secendary-background: #d7043eff;
+
+    --header-hight:80px;
+}
+* {
+    padding: 0%;
+    margin: 0%;
+}
+header {
+    display: inline-block;
+    height: var(--header-hight);
+    width: 100vw;
+    background-color: var(--secendary-background);
+}
+header>div.logo {
+    
+    width: 475px;
+    height: var(--header-hight);
+    background-image: url("https://kfc.nl/theme/images/kfc_logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 40%;
+}
+header>a {
+    
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+main {
+    display: inline-block;
+    background-color: var(--primary-background);
+}
+main >section {
+    position: relative;
+    display: inline-block; 
+    width: 384px;
+    height: 332px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+main>section>img {
+    width: 100%;
+    object-fit: contain;
+    max-width: 800px;
+    min-width: 300px;
+}
+main>section>h3 {
+    text-align: center;
+    font-size: 2em;
+}
+main>section>p {
+    position: absolute;
+    left: 10px;
+    bottom: 12px;
+    font-size: 1.2em;
+}
+main>section>button {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    height: 40px;
+    width: 70px;
+    font-size: 1.2em;
+    background-color: #d7043eff;
+    color: white;
+    border: solid 1px #1f1f1f;
+}
+main>section>button:active {
+    background-color: #c7042eef;
+    
+}
