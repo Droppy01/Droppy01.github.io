@@ -1,5 +1,5 @@
 :root {
-    --primary-background: #fdfdfd;
+     --primary-background: #fdfdfd;
     --secendary-background: #d7043eff;
 
     --header-hight:80px;
@@ -8,7 +8,10 @@
     padding: 0%;
     margin: 0%;
 }
-header {
+body {
+    overflow: hidden;
+}
+body>header {
     display: inline-block;
     height: var(--header-hight);
     width: 100vw;
@@ -32,7 +35,16 @@ header>a {
 main {
     display: inline-block;
     background-color: var(--primary-background);
+    height: calc(100vh - var(--header-hight));
+    overflow-y: scroll;
+    transition: filter, 0.05s;
 }
+
+main.blur{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
 main >section {
     position: relative;
     display: inline-block; 
@@ -71,4 +83,38 @@ main>section>button {
 main>section>button:active {
     background-color: #c7042eef;
     
+}
+
+
+body>article {
+    position: absolute;
+    top: 10vh;
+    right: 10vw;
+    background-color: var(--primary-background);
+    z-index: 1;
+    width: 80vw;
+    height: 80vh;
+
+    
+}
+body>article>header {
+    background-color: var(--secendary-background);
+    height: 30px;
+    
+}
+
+body>article>header>h5, body>article>header>p {
+    font-size: 1.5em;
+    color: white;
+    padding-left: 10px;
+    display: inline;
+}
+
+body>article>header>p {
+float: right;
+transition: color, 0.5s;
+}
+
+body>article>header>p:hover {
+    color: #afafaf;
 }
