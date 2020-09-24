@@ -4,7 +4,7 @@ class productcCompunent {
         this.img = product.img;
         this.price = product.price;
         this.id = id;
-        this.createElement()
+        this.createElement();
     }
     createElement() {
         this.Element = document.createElement("section");
@@ -14,7 +14,7 @@ class productcCompunent {
 <h3>${this.name}</h3>
 <p>€${this.price}</p>
 <button class=\"button\" id=\"${this.id}\">details</button>
-`
+`;
     }
     getElement(){
         return( this.Element);
