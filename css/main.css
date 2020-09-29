@@ -37,12 +37,12 @@ main {
     background-color: var(--primary-background);
     height: calc(100vh - var(--header-hight));
     overflow-y: scroll;
-    transition: filter, 0.05s;
+    transition: filter 0.05s;
 }
 
 main.blur{
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
 }
 
 main >section {
