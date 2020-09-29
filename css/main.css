@@ -1,12 +1,18 @@
 :root {
-     --primary-background: #fdfdfd;
+    --primary-background: #fdfdfd;
     --secendary-background: #d7043eff;
 
+    --primary-text-color: #000000;
+    --secendary-text-color:#ffffff;
+
     --header-hight:80px;
+
+    --transition-speed: 0.5s;
 }
 * {
     padding: 0%;
     margin: 0%;
+    font-family: 'Roboto'
 }
 body {
     overflow: hidden;
@@ -16,9 +22,11 @@ body>header {
     height: var(--header-hight);
     width: 100vw;
     background-color: var(--secendary-background);
+    transition: filter, var(--transition-speed) ease-in-out;
 }
+
+/*show the kfc logo*/
 header>div.logo {
-    
     width: 475px;
     height: var(--header-hight);
     background-image: url("https://kfc.nl/theme/images/kfc_logo.png");
@@ -26,21 +34,17 @@ header>div.logo {
     background-repeat: no-repeat;
     background-size: auto 40%;
 }
-header>a {
-    
-    color: white;
-    text-decoration: none;
-    font-size: 30px;
-}
+
 main {
     display: inline-block;
     background-color: var(--primary-background);
     height: calc(100vh - var(--header-hight));
+    width: 100vw;
     overflow-y: scroll;
-    transition: filter 0.05s;
+    transition: filter var(--transition-speed) ease-in-out;
 }
 
-main.blur{
+.blur{
     filter: blur(4px);
     -webkit-filter: blur(4px);
 }
@@ -49,7 +53,7 @@ main >section {
     position: relative;
     display: inline-block; 
     width: 384px;
-    height: 332px;
+    height: 400px;
     margin-left: 10px;
     margin-bottom: 10px;
 }
@@ -58,16 +62,20 @@ main>section>img {
     object-fit: contain;
     max-width: 800px;
     min-width: 300px;
+    max-height: 800px;
+    min-height: 300px;
 }
 main>section>h3 {
     text-align: center;
     font-size: 2em;
+    color: var(--primary-text-color);
 }
 main>section>p {
     position: absolute;
     left: 10px;
     bottom: 12px;
     font-size: 1.2em;
+    color: var(--primary-text-color);
 }
 main>section>button {
     position: absolute;
@@ -77,44 +85,88 @@ main>section>button {
     width: 70px;
     font-size: 1.2em;
     background-color: #d7043eff;
-    color: white;
+    color: var(--secendary-text-color);
     border: solid 1px #1f1f1f;
 }
 main>section>button:active {
     background-color: #c7042eef;
-    
+}
+main>section>button:hover {
+    cursor: pointer;
 }
 
 
 body>article {
-    position: absolute;
-    top: 10vh;
-    right: 10vw;
     background-color: var(--primary-background);
     z-index: 1;
+    overflow: hidden;
+    transition: width var(--transition-speed) ease-in-out, height var(--transition-speed) ease-in-out, top var(--transition-speed) ease-in-out, left var(--transition-speed) ease-in-out;
+    border: var(--secendary-background) 1px solid;
+}
+body>article>section {
     width: 80vw;
     height: 80vh;
-
-    
 }
-body>article>header {
+body>article>section>div {
+    width: 80vw;
+    height: calc(80vh - 30px);
+}
+body>article>section>header {
     background-color: var(--secendary-background);
     height: 30px;
     
 }
 
-body>article>header>h5, body>article>header>p {
+body>article>section>header>h5, body>article>section>header>p {
     font-size: 1.5em;
-    color: white;
+    color: var(--secendary-text-color);
     padding-left: 10px;
     display: inline;
 }
-
-body>article>header>p {
+body>article>section>div>img {
+    display:block;
+    margin:auto;
+    width: 790px;
+    height: 477px;
+}
+body>article>section>header>p {
 float: right;
 transition: color, 0.5s;
 }
 
-body>article>header>p:hover {
+body>article>section>header>p:hover {
     color: #afafaf;
+    cursor: pointer;
+}
+body>article>section>div>div.product_details {
+    width: calc(40vw - 80px);
+    margin-left: 50px;
+    float: left;
+}
+
+body>article>section>div>div.product_details>h1, body>article>section>div>div.product_details>h2{
+    color: var(--primary-text-color);
+    font-weight: bold;
+}
+body>article>section>div>div.product_details>h1 {
+    font-size: 2em;
+    
+}
+body>article>section>div>div.product_details>h2 {
+    font-size: 1.5em;
+}
+body>article>section>div>div.product_details>p{
+    color: var(--primary-text-color);
+    font-size: 1em;
+}
+
+body>article>section>div>div.bestaat_uit {
+    width: calc(40vw - 100px);
+    margin-left: 100px;
+    float: right;
+}
+body>article>section>div>div.bestaat_uit>ul {
+    list-style: none;
+    font-weight: lighter;
+    font-size: 1em;
 }
