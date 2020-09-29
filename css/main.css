@@ -22,7 +22,7 @@ body>header {
     height: var(--header-hight);
     width: 100vw;
     background-color: var(--secendary-background);
-    transition: filter, var(--transition-speed) ease-in-out;
+    transition: filter var(--transition-speed) ease-in-out;
 }
 
 /*show the kfc logo*/
